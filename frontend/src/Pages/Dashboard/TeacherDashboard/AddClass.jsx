@@ -89,12 +89,12 @@ function AddClass({ onClose }) {
       status: 'upcoming',
     };
 
-    // console.log("add classes",data)
+     console.log("add classes",data)
 
 
     if (currentDate > givenDate) {
       alert('choose a valid Date!');
-    } else if (note === '' || date === '' || link === '') {
+    } else if (date === '' || link === '') {
       alert('All fields are required!');
     } else {
       try {
@@ -107,6 +107,7 @@ function AddClass({ onClose }) {
         });
 
         const res = await response.json();
+        console.log(res.message)
         alert(res.message);
 
         if (!response.ok) {

@@ -41,7 +41,7 @@ function TeacherClasses() {
 
     return (
         <div className='ml-60 mt-20 text-white flex justify-between mr-80'>
-            <h1 className='absolute bottom-72 left-60 text-[#1671D8] text-2xl mt-4 mb-4 font-semibold'>Weekly Schedule</h1>
+
 
             <div className='h-[17rem] w-[30rem] overflow-auto '>
             {data.filter(clas => {
