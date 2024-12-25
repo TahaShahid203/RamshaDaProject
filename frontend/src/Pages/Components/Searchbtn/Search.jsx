@@ -88,6 +88,7 @@ function Search() {
   };
 
   const handleEnroll = async (courseName, id) => {
+    console.log("abc")
     let check = await fetch(
       `/api/course/${courseName}/${id}/verify/student/${ID}`,
       {
@@ -95,9 +96,11 @@ function Search() {
         headers: {
           "Content-Type": "application/json",
         },
-        // body: JSON.stringify({}),
+         body: JSON.stringify({}),
       }
+      
     );
+    
     const res = await check.json();
 
     console.log(res);
@@ -238,10 +241,13 @@ function Search() {
               ) : Data.enrolledStudent.length < 20 ? (
                 <div
                   onClick={() => handleEnroll(Data.coursename, Data._id)}
+                  
                   className="text-white bg-blue-900 py-2 px-3 absolute right-4 cursor-pointer"
                 >
+                  
                   Enroll Now
                 </div>
+                
               ) : (
                 <div onClick={()=> alert("Already Full, pls find other course")}
                   className="text-white bg-red-900 py-2 px-3 absolute right-4 cursor-not-allowed">

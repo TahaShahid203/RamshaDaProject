@@ -10,7 +10,7 @@ router.route("/login").post(adminLogin)
 
 router.route("/:adminID/approve").post(authAdmin, forApproval)
 
-router.route("/:adminID/approve/student/:studentID").post(authAdmin, approveStudent)
+router.route("/:adminID/approve/student/:studentID").post(authAdmin, approveStudent)                                        
 
 router.route("/:adminID/approve/teacher/:teacherID").post(authAdmin,approveTeacher)
 

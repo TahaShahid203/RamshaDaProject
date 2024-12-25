@@ -203,58 +203,74 @@ const getTeacher = asyncHandler(async(req,res) =>{
 })
 
 const addTeacherDetails = asyncHandler(async(req,res)=>{
-
+    console.log("This runs");
     const id = req.params.id
-    if(req.teacher._id != id){
-        throw new ApiError(400, "unauthroized access")
-    }
+    console.log(req.body);
+    console.log("1");
+    // if(req.teacher._id != id){
+    //     throw new ApiError(400, "unauthroized access")
+    // }
+    console.log("2");
+    const{Phone, Address, Experience, SecondarySchool, HigherSchool,UGcollege, SecondaryMarks, HigherMarks, UGmarks} = req.body
 
-    const{Phone, Address, Experience, SecondarySchool, HigherSchool,UGcollege, PGcollege, SecondaryMarks, HigherMarks, UGmarks, PGmarks} = req.body
-
-    if([Phone, Address, Experience, SecondarySchool, HigherSchool,UGcollege, PGcollege, SecondaryMarks, HigherMarks, UGmarks, PGmarks].some((field)=> field?.trim() === "")){
+    console.log("3");
+    if([Phone, Address, Experience, SecondarySchool, HigherSchool,UGcollege, SecondaryMarks, HigherMarks, UGmarks].some((field)=> field?.trim() === "")){
         throw new ApiError(400, "All fields are required")
     }
 
+    console.log("4");
     const alreadyExist = await Teacherdocs.findOne({Phone})
 
+    console.log("5");
     if(alreadyExist){
         throw new ApiError(400, "Phone number already exist")
     }
 
-    const AadhaarLocalPath = req.files?.Aadhaar?.[0]?.path;
+    console.log("idr aaya me");
 
-    const SecondaryLocalPath = req.files?.Secondary?.[0]?.path;
+  //  const AadhaarLocalPath = req.files?.Aadhaar?.[0]?.path;
 
-    const HigherLocalPath = req.files?.Higher?.[0]?.path
+  //  const SecondaryLocalPath = req.files?.Secondary?.[0]?.path;
 
-    const UGLocalPath = req.files?.UG?.[0]?.path
+  //  const HigherLocalPath = req.files?.Higher?.[0]?.path
 
-    const PGLocalPath = req.files?.PG?.[0]?.path
+  //  const UGLocalPath = req.files?.UG?.[0]?.path
 
-
-    if(!AadhaarLocalPath){
-        throw new ApiError(400, "Aadhaar is required")
-    }
-    if(!SecondaryLocalPath){
-        throw new ApiError(400, "Secondary marksheet is required")
-    }
-    if(!HigherLocalPath){
-        throw new ApiError(400, "Higher marksheet is required")
-    }
-    if(!UGLocalPath){
-        throw new ApiError(400, "UG marksheet is required")
-    }
-    if(!PGLocalPath){
-        throw new ApiError(400, "PG marksheet is required")
-    }
+   // const PGLocalPath = req.files?.PG?.[0]?.path
 
 
-    const Aadhaar = await uploadOnCloudinary(AadhaarLocalPath)
-    const Secondary = await uploadOnCloudinary(SecondaryLocalPath)
-    const Higher = await uploadOnCloudinary(HigherLocalPath)
-    const UG = await uploadOnCloudinary(UGLocalPath)
-    const PG = await uploadOnCloudinary(PGLocalPath)
+    // if(!AadhaarLocalPath){
+    //     throw new ApiError(400, "Aadhaar is required")
+    // }
+    // if(!SecondaryLocalPath){
+    //     throw new ApiError(400, "Secondary marksheet is required")
+    // }
+    // if(!HigherLocalPath){
+    //     throw new ApiError(400, "Higher marksheet is required")
+    // }
+    // if(!UGLocalPath){
+    //     throw new ApiError(400, "UG marksheet is required")
+    // }
+    // if(!PGLocalPath){
+    //     throw new ApiError(400, "PG marksheet is required")
+    // }
 
+
+    // const Aadhaar = await uploadOnCloudinary(AadhaarLocalPath)
+    // const Secondary = await uploadOnCloudinary(SecondaryLocalPath)
+    // const Higher = await uploadOnCloudinary(HigherLocalPath)
+    // const UG = await uploadOnCloudinary(UGLocalPath)
+    // const PG = await uploadOnCloudinary(PGLocalPath)
+
+    console.log(Phone);
+    console.log(Address);
+    console.log(Experience);
+    console.log(SecondarySchool);
+    console.log(HigherSchool);
+    console.log(UGcollege);
+    console.log(SecondaryMarks);
+    console.log(HigherMarks);
+    console.log(UGmarks);
     const teacherdetails = await Teacherdocs.create({
         Phone,
         Address,
@@ -262,18 +278,19 @@ const addTeacherDetails = asyncHandler(async(req,res)=>{
         SecondarySchool,
         HigherSchool,
         UGcollege,
-        PGcollege,
+      //  PGcollege,
         SecondaryMarks,
         HigherMarks,
         UGmarks,
-        PGmarks,
-        Aadhaar: Aadhaar.url,
-        Secondary: Secondary.url,
-        Higher: Higher.url,
-        UG:UG.url,
-        PG:PG.url,
+      //  PGmarks,
+        // Aadhaar: Aadhaar.url,
+        // Secondary: Secondary.url,
+        // Higher: Higher.url,
+        // UG:UG.url,
+        // PG:PG.url,
     })
 
+    console.log("idr ni aaya");
     const theTeacher = await Teacher.findOneAndUpdate({_id: id}, {$set: {Isapproved:"pending", Teacherdetails: teacherdetails._id}},  { new: true }).select("-Password -Refreshtoken")
     
     if(!theTeacher){

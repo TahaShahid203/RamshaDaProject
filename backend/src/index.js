@@ -10,7 +10,7 @@ console.log(`${process.env.DB_NAME}`);
 
 db()
 .then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+    app.listen(process.env.PORT || 4400, () => {
         console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
     })
 })

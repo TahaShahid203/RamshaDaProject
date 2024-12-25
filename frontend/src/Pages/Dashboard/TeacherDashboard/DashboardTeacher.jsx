@@ -14,6 +14,7 @@ function DashboardTeacher() {
   const [subjectForm, setsubjectForm] = useState('Math');
   const [Tdec, setTeacherDetails] = useState(null);
   const [starCount, setStar] = useState(5);
+ const [createdCourses, setCreatedCourses] = useState([]); // New state to track created courses
 
   const [formPopup, setFormPopup] = useState(false);
 
@@ -122,20 +123,20 @@ function DashboardTeacher() {
     <>
       <div className="m-5 ml-60 text-white flex flex-col gap-7">
         <div className="text-[1.1rem] w-[30rem] flex gap-60 items-center">
-          {/* <p>Amount: <span className=" text-green-500">Rs. {amount}</span></p> */}
+          { <p>Amount: <span className=" text-green-500">Rs. {amount}</span></p> }
           <div className="bg-[#1671D8] p-3 rounded-md cursor-pointer">
             Details
           </div>
           <div
-            // onClick={() => setPopup(true)}
+             onClick={() => setPopup(true)}
             className="bg-[#1671D8] p-3 rounded-md cursor-pointer"
           >
             Remuneration
           </div>
-          {/* <div className="flex items-center gap-2 ml-28 bg-[#1671D8] p-3 rounded-md cursor-pointer" onClick={()=>setNotification(prev => !prev)}>
+          <div className="flex items-center gap-2 ml-28 bg-[#1671D8] p-3 rounded-md cursor-pointer" onClick={()=>setNotification(prev => !prev)}>
             <span>Notifications</span>
             <TbMessage2Star />
-          </div> */}
+          </div>
         </div>
         <hr />
         <div className="flex gap-32">
@@ -171,16 +172,16 @@ function DashboardTeacher() {
             </div>
           </div>
           <div className="ml-28">
-            {/* {notification && (
-              show all notifications
-              example
+            {notification && (
+              // show all notifications
+              // example
               <div>
                 <p>course : Math</p>
                 <p>Timing : sun,Mon,tue</p>
                 <p>status : pending</p>
                 <p>message : sbcxbbdjbd</p>
               </div>
-            )} */}
+            )}
           </div>
         </div>
 

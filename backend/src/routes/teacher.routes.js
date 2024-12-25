@@ -23,35 +23,12 @@ router.route("/logout").post(
     authTeacher, logout
 )
 
-router.route("/verification/:id").post(authTeacher,
-    upload.fields([
-        {
-            name:"Aadhaar",
-            maxCount:1,
-        },
-        {
-            name:"Secondary",
-            maxCount:1,
-        },
-        {
-            name:"Higher",
-            maxCount:1
-        },
-        {
-            name:"UG",
-            maxCount:1
-        },
-        {
-            name:"PG",
-            maxCount:1
-        }
-    ]) ,
-     addTeacherDetails)
 
 router.route("/teacherdocument/:id").get(authTeacher, getTeacher)
 
 router.route("/teacherdocuments").post(teacherdocuments)
 
+router.route("/verification/:id").post(addTeacherDetails)
 
 router.route('/forgetpassword').post(ForgetPassword)
 

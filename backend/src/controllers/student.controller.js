@@ -254,28 +254,28 @@ const addStudentDetails = asyncHandler(async(req, res)=>{
         throw new ApiError(400, "phone number already exists")
     }
 
-    const AadhaarLocalPath = req.files?.Aadhaar?.[0]?.path;
+    // const AadhaarLocalPath = req.files?.Aadhaar?.[0]?.path;
 
-    const SecondaryLocalPath = req.files?.Secondary?.[0]?.path;
+    // const SecondaryLocalPath = req.files?.Secondary?.[0]?.path;
 
-    const HigherLocalPath = req.files?.Higher?.[0]?.path
+    // const HigherLocalPath = req.files?.Higher?.[0]?.path
 
-    if(!AadhaarLocalPath){
-        throw new ApiError(400, "Aadhaar is required")
-    }
+    // if(!AadhaarLocalPath){
+    //     throw new ApiError(400, "Aadhaar is required")
+    // }
 
-    if(!SecondaryLocalPath){
-        throw new ApiError(400, "Secondary marksheet is required")
-    }
+    // if(!SecondaryLocalPath){
+    //     throw new ApiError(400, "Secondary marksheet is required")
+    // }
 
-    if(!HigherLocalPath){
-        throw new ApiError(400, "Higher marksheet is required")
-    }
+    // if(!HigherLocalPath){
+    //     throw new ApiError(400, "Higher marksheet is required")
+    // }
 
-    const Aadhaar = await uploadOnCloudinary(AadhaarLocalPath)
-    const Secondary = await uploadOnCloudinary(SecondaryLocalPath)
+    // const Aadhaar = await uploadOnCloudinary(AadhaarLocalPath)
+    // const Secondary = await uploadOnCloudinary(SecondaryLocalPath)
 
-    const Higher = await uploadOnCloudinary(HigherLocalPath)
+    // const Higher = await uploadOnCloudinary(HigherLocalPath)
 
     const studentdetails = await studentdocs.create({
         Phone,
@@ -285,9 +285,9 @@ const addStudentDetails = asyncHandler(async(req, res)=>{
         HigherSchool,
         SecondaryMarks,
         HigherMarks,
-        Aadhaar: Aadhaar.url,
-        Secondary: Secondary.url,
-        Higher: Higher.url,
+        // Aadhaar: Aadhaar.url,
+        // Secondary: Secondary.url,
+        // Higher: Higher.url,
     })
 
 

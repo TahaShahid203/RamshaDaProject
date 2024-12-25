@@ -44,17 +44,17 @@ const StudentDocument = () => {
     HigherSchool: data.HigherSchool || "",
     SecondaryMarks: data.SecondaryMarks || "",
     HigherMarks: data.HigherMarks || "",
-    Aadhaar: null,
-    Secondary: null,
-    Higher: null,
+    // Aadhaar: null,
+    // Secondary: null,
+    // Higher: null,
   });
 
-  const handleFileChange = (fileType, e) => {
-    setFormData({
-      ...formData,
-      [fileType]: e.target.files[0],
-    });
-  };
+  // const handleFileChange = (fileType, e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [fileType]: e.target.files[0],
+  //   });
+  // };
 
   const handleInputChange = (field, value) => {
     setFormData({
@@ -74,11 +74,17 @@ const StudentDocument = () => {
     });
 
     try {
+      console.log(formData);
+      console.log(formDataObj);
       const response = await fetch(`/api/student/verification/${Data}`, {
         method: "POST",
-        body: formDataObj,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
+      console.log("response received");
       const responseData = await response.json();
       console.log("response", responseData);
 
@@ -158,12 +164,12 @@ const StudentDocument = () => {
               handleInputChange("Highesteducation", e.target.value)
             }
           />
-          <InputUpload
+          {/* <InputUpload
             label={"Upload Aadhar Card"}
             placeholder={"Upload Aadhar Card"}
             value={formData.Aadhaar}
             onChange={(e) => handleFileChange("Aadhaar", e)}
-          />
+          /> */}
         </div>
 
         <p className="text-[#4E84C1] p-5 px-10 pt-10">
@@ -189,11 +195,11 @@ const StudentDocument = () => {
               }
             />
             <div className=" mt-[-1.5rem]">
-              <InputUpload
+              {/* <InputUpload
                 placeholder={"Upload 10th Result"}
                 value={formData.Secondary}
                 onChange={(e) => handleFileChange("Secondary", e)}
-              />
+              /> */}
             </div>
           </div>
           <hr />
@@ -214,11 +220,11 @@ const StudentDocument = () => {
               onChange={(e) => handleInputChange("HigherMarks", e.target.value)}
             />
             <div className=" mt-[-1.5rem]">
-              <InputUpload
+              {/* <InputUpload
                 placeholder={"Upload 12th Result"}
                 value={formData.Higher}
                 onChange={(e) => handleFileChange("Higher", e)}
-              />
+              /> */}
             </div>
           </div>
         </div>

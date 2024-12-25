@@ -519,6 +519,7 @@ const canStudentEnroll = asyncHandler(async(req,res)=>{
   if(alreadyEnrolled){
     throw new ApiError(400,"already enrolled in this course")
   }
+  
   return res.status(200).json(new ApiResponse(200, {}, "student can enroll"))
 })
 

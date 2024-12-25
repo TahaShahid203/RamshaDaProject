@@ -165,20 +165,20 @@ const studentDetailsSchema = new mongoose.Schema({
         required:true,
     },
 
-    Aadhaar:{
-        type:String,
-        required:true,
-    },
+    // Aadhaar:{
+    //     type:String,
+    //     required:true,
+    // },
 
-    Secondary:{
-        type:String,
-        required:true,
-    },
+    // Secondary:{
+    //     type:String,
+    //     required:true,
+    // },
 
-    Higher:{
-        type:String,
-        required:true,
-    },
+    // Higher:{
+    //     type:String,
+    //     required:true,
+    // },
 
 }, {
     timestamps:true,
