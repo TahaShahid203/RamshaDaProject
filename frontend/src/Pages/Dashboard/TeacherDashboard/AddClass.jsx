@@ -94,7 +94,7 @@ function AddClass({ onClose }) {
 
     if (currentDate > givenDate) {
       alert('choose a valid Date!');
-    } else if (date === '' || link === '') {
+    } else if (note === '' || date === '' || link === '') {
       alert('All fields are required!');
     } else {
       try {
