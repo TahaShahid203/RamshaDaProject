@@ -190,7 +190,7 @@ function DashboardTeacher() {
         {formPopup && (
           <div className='fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex items-center justify-center'>
             <div className='bg-[#5be0de] text-black w-[70vw] px-14 py-10 rounded-sm'>
-              {/* <div className=' absolute w-9 h-9 bg-white rounded-xl cursor-pointer flex items-center justify-center m-2' onClick={onClose}>✖️</div> */}
+              { <div className=' absolute w-9 h-9 bg-white rounded-xl cursor-pointer flex items-center justify-center m-2' onClick={onClose}>✖️</div> }
 
               <p className='text-3xl'>Teacher Feedback Form</p>
               <p className=' border-b-2 py-2'>We highly appreciate your involvement. Please help us improve by filling out this teacher feedback form. Thank you!</p>

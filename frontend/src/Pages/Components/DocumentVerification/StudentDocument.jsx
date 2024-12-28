@@ -49,13 +49,6 @@ const StudentDocument = () => {
     // Higher: null,
   });
 
-  // const handleFileChange = (fileType, e) => {
-  //   setFormData({
-  //     ...formData,
-  //     [fileType]: e.target.files[0],
-  //   });
-  // };
-
   const handleInputChange = (field, value) => {
     setFormData({
       ...formData,
@@ -121,7 +114,7 @@ const StudentDocument = () => {
       <div className="flex items-center gap-[20rem] px-32 py-2 bg-[#0D286F]">
         <div className="flex items-center gap-3">
           <img src={logo} className="w-14" alt="" />
-          <h1 className="text-2xl text-[#4E84C1] font-bold">Shiksharthee</h1>
+          <h1 className="text-2xl text-[#4E84C1] font-bold">LearnBridge</h1>
         </div>
         <h2 className="text-white text-xl">Document Verification (Student) </h2>
       </div>
