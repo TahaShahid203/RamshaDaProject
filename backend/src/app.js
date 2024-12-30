@@ -38,4 +38,4 @@ import paymentRouter from "./routes/payment.routes.js"
 app.use("/api/payment", paymentRouter)
 
 
-export {app}
+export default app
