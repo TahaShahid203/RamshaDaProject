@@ -61,7 +61,7 @@ function StudentClasses() {
 
         </div>
         
-          <NavLink to={data[0]?.link} target='_blank'>
+          {/* <NavLink to={data[0]?.link} target='_blank'> */}
             <div className='bg-white p-5 h-52 cursor-pointer rounded-lg text-black'>
                 <div className='flex gap-3 items-center mb-5 mt-2'>
                     <img src={Clock} alt="clock" width={50} />
@@ -73,13 +73,16 @@ function StudentClasses() {
                 <div className='flex gap-12 items-center'>
                     <div className='ml-3'>
                         <p>Your next Class</p>
-                        <p className='text-[#018280] text-3xl font-semibold'>{data[0]?.coursename}</p>
+                        <p className='text-[#018280] text-3xl font-semibold'>
+    {data[0]?.courseName?.toUpperCase() || 'Physics'}
+</p>
+
                         <p className=' text-light-blue-700'>{data[0]?.title.slice(0,25)} ...</p>
                     </div>
                     <img src={Camera} alt="Camera" width={70}/>
                 </div>
             </div>
-          </NavLink>
+          {/* </NavLink> */}
     </div>
   )
 }

@@ -66,9 +66,9 @@ function Courses() {
             </div>
             </div>
             { fac.enrolledteacher.Email === "urttsg@gmail.com" ?
-              <h4><span className="font-bold text-brown-800">Education :</span> Post graduate from Calcutta University</h4> 
+              <h4><span className="font-bold text-brown-800">Education :</span> Post graduate from UET University</h4> 
               : 
-              <h4><span className="font-bold text-brown-800">Education :</span> Post graduate from Sister Nivedita university</h4>
+              <h4><span className="font-bold text-brown-800">Education :</span> Post graduate from UET university</h4>
             }
             { fac.enrolledteacher.Email === "urttsg@gmail.com" ? <h4>1 years of teaching experience</h4> : <h4>2 years of teaching experience</h4>}
           </div>

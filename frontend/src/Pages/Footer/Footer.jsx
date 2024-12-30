@@ -14,32 +14,9 @@ function Footer() {
         </div>
         <div className="rightPart">
           <div className="links">
-            <div className="link">
-              <hr />
-              <p>Home</p>
-            </div>
-            <div className="link">
-              <hr />
-              <p>About</p>
-            </div>
-            <div className="link">
-              <hr />
-              <p>How it works</p>
-            </div>
-            <div className="link">
-              <hr />
-              <p>Courses</p>
-            </div>
-            <div className="link">
-              <hr />
-              <p>Contact Us</p>
-            </div>
-            <div className="link">
-              <hr />
-              <p>Privacy Policy</p>
-            </div>
+
           </div>
-          <hr className="hr"/>
+
           <div className="icons">
             <img src="https://www.figma.com/file/6b4R8evBkii6mI53IA4vSS/image/698567c8ecd3b39bb1b6ac6c68e44bb80ac15d62" width={50} alt="linked in" />
             <img src="https://www.figma.com/file/6b4R8evBkii6mI53IA4vSS/image/04e756fd5877045a0932d92fb8410e1b6b560854" width={50} alt="Twiter" />

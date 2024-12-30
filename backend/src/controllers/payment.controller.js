@@ -15,7 +15,7 @@ const coursePayment = asyncHandler(async(req,res)=>{
     }
 
     const options = {
-        amount: fees,  // amount in the smallest currency unit
+        amount: fees,  
         currency: "INR",
         receipt: "order_rcptid_11"
       };

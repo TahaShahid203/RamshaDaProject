@@ -127,7 +127,7 @@ function DashboardTeacher() {
           <div className="bg-[#1671D8] p-3 rounded-md cursor-pointer">
             Details
           </div>
-          <div
+          {/* <div
              onClick={() => setPopup(true)}
             className="bg-[#1671D8] p-3 rounded-md cursor-pointer"
           >
@@ -136,7 +136,7 @@ function DashboardTeacher() {
           <div className="flex items-center gap-2 ml-28 bg-[#1671D8] p-3 rounded-md cursor-pointer" onClick={()=>setNotification(prev => !prev)}>
             <span>Notifications</span>
             <TbMessage2Star />
-          </div>
+          </div> */}
         </div>
         <hr />
         <div className="flex gap-32">

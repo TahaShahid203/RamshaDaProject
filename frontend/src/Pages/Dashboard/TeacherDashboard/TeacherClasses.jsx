@@ -70,7 +70,7 @@ function TeacherClasses() {
             </div>
 
             {data.length > 0 && (
-                <NavLink to={data[0]?.link} target='_blank'>
+               // <NavLink to={data[0]?.link} target='_blank'>
                     <div className='bg-white p-5 h-52 cursor-pointer rounded-lg text-black'>
                         <div className='flex gap-3 items-center mb-5 mt-2'>
                             <img src={Clock} alt="clock" width={50} />
@@ -85,10 +85,10 @@ function TeacherClasses() {
                                 <p className='text-[#018280] text-3xl font-semibold'>{data[0]?.coursename.toUpperCase()}</p>
                                 <p className=' text-light-blue-700'>{data[0]?.title.slice(0, 25)} ...</p>
                             </div>
-                            <img src={Camera} alt="Camera" width={70} />
+                          
                         </div>
                     </div>
-                </NavLink>
+               // </NavLink>
             )}
 
             <div onClick={() => setShowPopup(true)} className='absolute right-10 bg-blue-900 p-2 rounded-sm cursor-pointer'>
