@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { Teacher } from "../models/teacher.model.js";
 import { Sendmail } from "../utils/Nodemailer.js";
-export const config = { runtime: 'edge' };
+
 
 
 const verifyEmail = async (Email, Firstname, createdStudent_id) => {
