@@ -12,6 +12,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+export const config = { runtime: 'edge' };
 
 export const instance = new Razorpay({
     key_id: process.env.KEY_ID,

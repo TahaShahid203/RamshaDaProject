@@ -47,7 +47,7 @@ export default function Login() {
 
     try {
       // Send data to backend (you need to implement this part)
-      const response = await fetch(`/api/${userType}/login`, {
+      const response = await fetch(`https://ramsha-da-project-backend.vercel.app/api/${userType}/login`, {
         method: 'POST',
         credentials: "include",
         headers: {
@@ -56,6 +56,7 @@ export default function Login() {
         body: JSON.stringify(data),
       });
 
+      console.log(response);
       const responesData = await response.json()
       if(responesData.message != 'Logged in'){
         setErr(responesData.message);

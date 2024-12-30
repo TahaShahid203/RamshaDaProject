@@ -6,6 +6,7 @@ import { Teacher } from "../models/teacher.model.js";
 import {Sendmail} from "../utils/Nodemailer.js"
 
 
+export const config = { runtime: 'edge' };
 const getCourse = asyncHandler(async(req,res)=>{
 
     const courses = await course.find(
